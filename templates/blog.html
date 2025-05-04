@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Health AI Blog</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+  <style>
+    :root {
+      --bg: #f0f4f8;
+      --text: #212121;
+      --card-bg: rgba(255, 255, 255, 0.75);
+      --glass-border: rgba(255, 255, 255, 0.2);
+    }
+
+    [data-theme="dark"] {
+      --bg: #121212;
+      --text: #ffffff;
+      --card-bg: rgba(18, 18, 18, 0.8);
+      --glass-border: rgba(255, 255, 255, 0.1);
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', sans-serif;
+      transition: background-color 0.5s ease, color 0.5s ease;
+    }
+
+    .header-banner {
+      background: linear-gradient(270deg, #43cea2, #185a9d);
+      background-size: 400% 400%;
+      animation: gradientShift 10s ease infinite;
+      height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .header-banner h1 {
+      color: white;
+      font-size: 2.8rem;
+      font-weight: bold;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+      z-index: 2;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .blog-container {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 20px;
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+      padding: 2.5rem;
+      margin-top: -80px;
+      margin-bottom: 60px;
+      transition: background 0.4s ease;
+    }
+
+    h2, h3 {
+      color: #00796b;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 1rem;
+    }
+
+    ul li::before {
+      content: "✔️";
+      margin-right: 10px;
+    }
+
+    .section-icon {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    .footer {
+      background: #00796b;
+      color: white;
+      padding: 1rem 0;
+      text-align: center;
+    }
+
+    .footer a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    .toggle-dark {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 999;
+      background: #00796b;
+      border: none;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .toggle-dark:hover {
+      background-color: #004d40;
+    }
+
+    a, strong {
+      color: #00695c;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Toggle Dark Mode Button -->
+  <button class="toggle-dark" onclick="toggleDarkMode()">
+    <i class="bi bi-moon-fill"></i> Dark Mode
+  </button>
+
+  <!-- Header Banner -->
+  <div class="header-banner">
+    <h1>Empowering Health with AI</h1>
+  </div>
+
+  <!-- Blog Content -->
+  <div class="container blog-container">
+
+    <h2 class="text-center mb-4">
+      <i class="bi bi-journal-text me-2"></i>
+      Building a Symptom-Based Disease Diagnosis Web App with Flask and Machine Learning
+    </h2>
+
+    <p>Access to timely healthcare is vital. We developed a web app using Flask and a Decision Tree Classifier to help users identify illnesses based on their symptoms. Here's how we made it work:</p>
+
+    <div class="section-title">
+      <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_wz5ntbap.json" background="transparent" speed="1" loop autoplay class="section-icon"></lottie-player>
+      <h3>The Problem</h3>
+    </div>
+    <p>Many people experience symptoms and want instant insights. With overlapping conditions, it’s hard to self-diagnose. We wanted to solve this with machine learning.</p>
+
+    <div class="section-title">
+      <lottie-player src="https://assets4.lottiefiles.com/private_files/lf30_p8jszj.json" background="transparent" speed="1" loop autoplay class="section-icon"></lottie-player>
+      <h3>The Solution</h3>
+    </div>
+    <p>Users input symptoms, and a trained Decision Tree predicts the possible disease. The steps are:</p>
+
+    <ol>
+      <li><strong>Symptom Input:</strong> Users type symptoms in a friendly interface.</li>
+      <li><strong>Model Prediction:</strong> A Decision Tree Classifier predicts the illness.</li>
+      <li><strong>Information:</strong> Includes disease description, precautions, medicine, diet, and workouts.</li>
+    </ol>
+
+    <div class="section-title">
+      <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_efxv6jz4.json" background="transparent" speed="1" loop autoplay class="section-icon"></lottie-player>
+      <h3>Key Features</h3>
+    </div>
+    <ul>
+      <li><strong>User-Friendly Interface</strong> – Simple, clean, responsive layout.</li>
+      <li><strong>Accurate Predictions</strong> – Based on trained ML models.</li>
+      <li><strong>Detailed Health Info</strong> – Descriptions, diet tips, and more.</li>
+      <li><strong>Educational Content</strong> – Blogs and guides on health awareness.</li>
+    </ul>
+
+    <div class="section-title">
+      <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_hl3e5jph.json" background="transparent" speed="1" loop autoplay class="section-icon"></lottie-player>
+      <h3>Conclusion</h3>
+    </div>
+    <p>Our web app bridges the gap between tech and health. With AI and accessible data, it offers users instant clarity and guidance. In today’s digital healthcare era, tools like this are essential for awareness and well-being.</p>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>
+      © 2025 Health Care Dr. Bot — 
+      <a href="{{ url_for('home') }}">Home</a> |
+      <a href="{{ url_for('about') }}">About</a> |
+      <a href="{{ url_for('contact') }}">Contact</a>
+    </p>
+  </footer>
+  
+
+  <!-- Dark Mode Script -->
+  <script>
+    function toggleDarkMode() {
+      const html = document.documentElement;
+      html.dataset.theme = html.dataset.theme === "dark" ? "light" : "dark";
+    }
+  </script>
+
+</body>
+</html>
